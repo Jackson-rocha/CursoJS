@@ -137,8 +137,39 @@ console.log(Number.isNaN(num9));
 // objeto math.()
 
 let num10 = 9.651761;
-let num11 = Math.floor(num10);
+let num11 = Math.floor(num10);// aredonda para cima
+           Math.ceil();// aredonda para baixo
+           Math.round();// aredonda de forma altomatica
+           Math.max(1,3,9,4,5,); //pega o maior numero da lista
+           Math.min(1,3,9,4,5,);//pega o menor numero da lista
+           Math.random();// escolhe numeros aleatorios
 console.log(num10);
+
+const numero = Number(prompt('digite um numero :'));
+const nomeroTitulo = document.getElementById('nomero-Titulo');
+const texto = document.getElementById('texto');
+const raiz = document.getElementById('raiz');
+const inteiro = document.getElementById('inteiro');
+const nan = document.getElementById('nan');
+const baixo =document.getElementById('baixo');
+const cima =document.getElementById('cima');
+const decimais = document.getElementById('decimais')
+
+nomeroTitulo.innerHTML = numero;
+texto.innerHTML = `<p>seu numero + 2 é ${numero + 2 } </p>`;
+raiz.innerHTML = `<p>A raiz quadrada de ${numero} é ${Math.sqrt(numero)}</p>`;//ou elevado a potencia .. (numero ** 0.5)
+inteiro.innerHTML = `<p>${numero} é inteiro? ${Number.isInteger(numero)} </p>`;
+nan.innerHTML = `<p>È NaN: ${Number.isNaN(numero)}</p>`
+baixo.innerHTML = `<p>arredondando pra baixo  ${Math.floor(numero)}</p>`;
+cima.innerHTML = `<p>arredondando pra cima ${Math.ceil(numero)}</p>`;
+decimais.innerHTML = `<p>com duas casas decimais ${numero.toFixed(2)}</p>`
+
+// modo do curso
+
+texto.innerHTML = "";
+texto.innerHTML += `<p>seu numero + 2 é ${numero + 2 } </p>`;
+texto.innerHTML += `<p>A raiz quadrada de ${numero} é ${numero ** 0.5}</p>`;
+texto.innerHTML += `<p>${numero} é inteiro? ${Number.isInteger(numero)} </p>`;
 
 
 
