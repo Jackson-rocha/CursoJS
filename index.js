@@ -1,9 +1,9 @@
-console.log('Hello word')
-console.log('Meu nome é "JACKSON". Estou aprendendo javascript as 8 da manhã.');
+console.log('Hello word');
+console.log('Meu nome é "JACKSON". Estou aprendendo javascript as 8h da manhã.');
 
 //criando variaveis
-// var let & const
-//let nome = 'joão';
+//var let & const
+let nome = 'joão';
 console.log( nome + ' e o pé de feijão')
 //declarando varial 
 let n; //declarou
@@ -170,6 +170,91 @@ texto.innerHTML = "";
 texto.innerHTML += `<p>seu numero + 2 é ${numero + 2 } </p>`;
 texto.innerHTML += `<p>A raiz quadrada de ${numero} é ${numero ** 0.5}</p>`;
 texto.innerHTML += `<p>${numero} é inteiro? ${Number.isInteger(numero)} </p>`;
+//Arrays
+
+const alunos =['pai','jr','jean','jackson'];
+alunos[0] = 'wagner' //alterando item
+//adicionando elemento no array
+alunos.push('mae');
+alunos.push('Duda');
+alunos[alunos.length]= 'aline'; //outra forma de adc
+alunos.unshift('isac'); //adc antes da lista
+alunos.pop();//removendo o ultimo item
+alunos.shift();//removendo o primeiro item
+console.console.log(alunos.slice(0, 4)); //fatiamento de arrays
+console.log(alunos);
+
+// crindo funções
+//funções precisam ter nomes significativo 
+//nao pode comecar com numeros
+//nao pode conter espaços nem traços
+//ultilizamos calCase
+//case-sensitive
+
+function saudacao(nome){
+   // console.log(`bom dia ${nome} !`);
+       return `Bom dia ${nome} !`;    
+   };
+   const variavel = saudacao('jackson'); //chamando função
+   console.log(variavel);
+   saudacao('leonardo'); //chamando função
+   saudacao('joao'); //chamando função
+   saudacao('kleber'); //chamando função
+   //função de soma
+   
+   function soma(x, y){
+       const resultado = x + y;
+       return resultado;
+   }
+   
+   console.log(soma(3,7));
+   //outro modo de criar função
+   const raiz = function(n){
+       //return n**0.5;
+   };
+   
+   // Arrow function
+   const raiz = (n) => {
+       return n**0.5;
+   };
+   console.log(raiz(9));
+   
+   // Arrow function simplificada
+   const raiz = n => return n ** 0.5;
+   
+   console.log(raiz(9));
+   //Objetos {}
+//Objetos literais
+const pessoa ={
+   nome:'luiz',
+   sobrenome:'Iranda',
+   idade:25
+};
+function criarPessoa(nome, sobrenome, idade){
+   return{nome, sobrenome, idade }; //retornando objeto
+};
+const pessoa1 =criarPessoa('luiz','Iranda',25);
+const pessoa2 =criarPessoa('luiz','Iranda',25);
+const pessoa3 =criarPessoa('luiz','Iranda',25);
+const pessoa4 =criarPessoa('luiz','Iranda',25);
+const pessoa5 =criarPessoa('luiz','Iranda',25);
+console.log(pessoa3);
+//objeto
+const pessoa6 = {
+   nome:'luiz',
+   sobrenome:'Iranda',
+   idade:25,
+   //metodo(função dentro de um objeto..)
+   fala(){
+       console.log(`${this.nome} ${this.sobrenome} está falando oi...`)
+   },
+   //metodo(função dentro de um objeto..)
+   incrementaIdade(){
+       ++this.idade;
+   }
+}
+pessoa6.fala();
+
 
 
 
