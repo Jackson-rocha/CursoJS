@@ -1,4 +1,4 @@
-console.log('Hello word');
+/*console.log('Hello word');
 console.log('Meu nome é "JACKSON". Estou aprendendo javascript as 8h da manhã.');
 
 //criando variaveis
@@ -54,7 +54,7 @@ console.log(typeof nomeAluno);// tipo de dado primitivo
 ** potencia / % resto da divisão
 
 */
-
+/*
 const num4 = 10;
 const num5 = 5;
 console.log(num4 + num5);
@@ -73,12 +73,12 @@ console.log(num4 % num5);
 */
 /*Nan - not a number / parseInt(inteiro), parseFloat(flutuante decimais), Number(decimal e inteiro) */
 
-EXERCICIOS
+/*EXERCICIOS
 
-                let num6 = Number( prompt('digite um numero'));
-                let num7 = Number(prompt('digite um numero'));
-                const resultadoo = num6 + num7;
-                alert(`O resultado foi ${resultadoo}`);
+         let num6 = Number( prompt('digite um numero'));
+         let num7 = Number(prompt('digite um numero'));
+         const resultadoo = num6 + num7;
+         alert(`O resultado foi ${resultadoo}`);
 
 
 let varA = 'A'
@@ -172,7 +172,7 @@ texto.innerHTML += `<p>A raiz quadrada de ${numero} é ${numero ** 0.5}</p>`;
 texto.innerHTML += `<p>${numero} é inteiro? ${Number.isInteger(numero)} </p>`;
 //Arrays
 
-const alunos =['pai','jr','jean','jackson'];
+const alunos =['pai','jr','jean','jackson',];
 alunos[0] = 'wagner' //alterando item
 //adicionando elemento no array
 alunos.push('mae');
@@ -210,7 +210,7 @@ function saudacao(nome){
    console.log(soma(3,7));
    //outro modo de criar função
    const raiz = function(n){
-       //return n**0.5;
+      return n**0.5;
    };
    
    // Arrow function
@@ -254,6 +254,47 @@ const pessoa6 = {
    }
 }
 pessoa6.fala();
+
+
+/*
+primitivos (imtaveis) - string, boolean, undefined, null (bigint, symbol) - valor
+
+referencia (mutavel) - array, object, function 
+*/
+
+/*exercicio... arrays e objects
+
+function meuEscopo () {
+   const form = document.querySelector('.form');
+  
+   //      uma maneira de enviar formulario
+   form.onsubmit = function (evento) {
+       evento.preventDefault();
+        alert(1);
+       console.log('foi enviado');
+       
+   };
+}
+
+meuEscopo();*/
+
+ /* outra maneira de enviar formulario
+
+ function meuEscopo () {
+   const form = document.querySelector('.form');
+   
+   let contador =  1;
+   function recebeEventoForm (evento) {
+       evento.preventDefault();
+       console.log(`Form nao foi enviado ${contador}`);
+       contador++;
+   }
+
+   form.addEventListener('submit', recebeEventoForm );
+}
+
+meuEscopo();*/
+
 
 
 
