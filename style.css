@@ -54,11 +54,16 @@ form input:hover
     box-shadow: 2px 2px 10px white;
     
 }
+form input
+{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
 button{
     width: 30vw;
     height: 50px;
     margin: 70px;
-    margin-left: calc(65vw - 30vw);
     color: aliceblue;
     font-weight: 700;
     font-size: 30px;
@@ -66,7 +71,7 @@ button{
     border: none;
     box-shadow: 2px 2px 10px white;
 }
-button:hover{
+ button:hover{
     cursor: pointer;
     background-color: rgb(240, 248, 255);
     color: #153352;
