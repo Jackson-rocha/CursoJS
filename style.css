@@ -84,3 +84,13 @@ button:active
     background: #2f4f6e;
     color: #99ccff;
 }
+.bad
+{
+    background: rgb(red, rgb(189, 101, 1), rgb(223, 30, 30));
+    padding: 10px 20px;
+}
+.paragrafo-resultado, .bad
+{
+    background: rgb(69, 145, 69);
+    padding: 10px 20px;
+}
