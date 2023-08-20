@@ -519,4 +519,114 @@ switch(diaSemana){
 
 console.log(diaSemana, diaSemanaTexto);*/
 
+/*
 
+const h1 = document.querySelector('.container h1');
+
+const data = new Date();
+
+function getDiaSemanaTexto(diaSemana){
+    let diaSemanaTexto;
+
+    switch(diaSemana){
+    case 0:
+        diaSemanaTexto ='domingo';
+        return diaSemanaTexto;
+    case 1:
+        diaSemanaTexto ='segunda-feira';
+        return diaSemanaTexto;
+    case 2:
+        diaSemanaTexto ='terça-feira';
+        return diaSemanaTexto;
+    case 3:
+        diaSemanaTexto ='quarta-feira';
+        return diaSemanaTexto;
+    case 4:
+        diaSemanaTexto ='quinta-feira';
+        return diaSemanaTexto;
+    case 5:
+        diaSemanaTexto ='sexta-feira';
+        return diaSemanaTexto;
+    case 6:
+        diaSemanaTexto ='sabado';
+        return diaSemanaTexto;
+    default:
+        diaSemanaTexto = 'dia invalido';
+        return diaSemanaTexto;
+    }
+}
+
+function getNomeMes(numeroMes){
+    let NomeMes;
+
+    switch(numeroMes){
+    case 0:
+        NomeMes ='janeiro';
+        return NomeMes;
+    case 1:
+        NomeMes ='fevereiro';
+        return NomeMes;
+    case 2:
+        NomeMes ='março';
+        return NomeMes;
+    case 3:
+        NomeMes ='abril';
+        return NomeMes;
+    case 4:
+        NomeMes ='maio';
+        return NomeMes;
+    case 5:
+        NomeMes ='junho';
+        return NomeMes;
+    case 6:
+        NomeMes ='julho';
+        return NomeMes;
+    case 7:
+        NomeMes ='agosto';
+        return NomeMes;
+    case 8:
+        NomeMes ='setembro';
+        return NomeMes;
+    case 9:
+        NomeMes ='outubro';
+        return NomeMes;
+    case 10:
+        NomeMes ='novembro';
+        return NomeMes;
+    case 11:
+        NomeMes ='dezembro';
+        return NomeMes;
+    default:
+        NomeMes = 'dia invalido';
+        return NomeMes;
+    }
+}
+function zeroAesquerda (num){
+    return num >= 10 ? num : `0${num}`
+}
+function criaData(data){
+    const diaSemana = data.getDay();
+    const numeroMes = data.getMonth();
+
+    const nomeDia = getDiaSemanaTexto(diaSemana);
+    const NomeMes = getNomeMes(numeroMes);
+
+    return (
+        `${nomeDia}, ${data.getDate()} de ${NomeMes}` + ` de ${data.getFullYear()} ` + 
+        ` ${zeroAesquerda( data.getHours())}: ${zeroAesquerda(data.getMinutes())}`
+    );
+}
+h1.innerHTML = criaData(data);
+
+//outro modo de witch e data
+
+const h1 = document.querySelector('.container h1');
+
+const data = new Date();
+const opcoes = {
+    dateStyle: 'full',
+    timeStyle: 'full'
+};
+
+h1.innerHTML = data.toLocaleDateString( {dateStyle: 'full', timeStyle: 'short'});
+*/
