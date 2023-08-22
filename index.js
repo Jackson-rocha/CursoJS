@@ -670,6 +670,7 @@ for (let i = 0; i < frutas.length; i++) { +=10
 */
 //Exercicio com for
 /*
+//for classico geralmente com interaveis(arrays ou string)
 const elementos = [
     {tag: 'p', texto: 'qualquer texto que voce quiser'},
     {tag: 'div', texto: 'frase 2'},
@@ -689,4 +690,83 @@ for (let i = 0; i < elementos.length; i++){
 }
 
 container.appendChild(div);
+*/
+
+// for in --> le os indices ou chaves do objeto
+
+/* const frutas = ['pera', 'maçã', 'uva'];
+
+for (let i in frutas) {
+    console.log(frutas[i]);
+}
+
+//
+
+const pessoas = {
+    nome: 'luiz',
+    sobrenome: 'otavio',
+    idade: 30
+};
+
+// for in --> le os indices ou chaves do objeto
+for(let chave in pessoas){
+    console.log(chave, pessoas[chave]);
+}
+
+// for of --> retorna os valores em si..
+
+const pessoas = [
+    'luiz',
+    'otavio',
+    'henrique',
+]
+
+for (let valor of pessoas){
+    console.log(valor);
+}
+
+// forEach
+
+pessoas.forEach(function(valor, indice, array){
+    console.log(valor, indice, array);
+})
+*/
+
+// exercicios com node list
+/*
+const paragrafos = document.querySelector('.paragrafos');
+const ps = paragrafos.querySelectorAll('p');
+
+const estilosBody = getComputedStyle(document.body);
+const backgroundColorBody = estilosBody.backgroundColor;
+console.log(backgroundColorBody);
+
+for (let p of ps) {
+    p.style.backgroundColor = backgroundColorBody;
+    p.style.color = '#FFFFFF';
+};
+
+
+
+// while  do while estrutura de repetição
+//while checa a condição e dps le o cod
+function random(min, max){
+    const r = Math.random() * (max -min) + min;
+    return Math.floor(r);
+}
+
+const min = 1;
+const max = 50;
+let rand = random(min, max);
+
+while (rand !== 10){
+    rand = random(min, max);
+    console.log(rand);
+};
+//do while checa o cod e dps le a condição
+do {
+    rand = random(min, max);
+    console.log(rand);
+} while(rand !== 10);
+
 */
