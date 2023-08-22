@@ -656,5 +656,15 @@ const numeros =[ [1, 2, 3,], [4, 5, 6], [ 7, 8, 9] ];
 const [lista1, lista2, lista3] =numeros;
 console.log(lista3[0]);
 
- 
+// estrutura de repetição
+
+/* for (let i = 0; i <= 30; i++) {/*+=10*/
+//console.log(i);
+//}
+
+/* const frutas = ['pera', 'uva', 'laranja'];
+
+for (let i = 0; i < frutas.length; i++) { +=10
+    console.log(i);
+};
 */
