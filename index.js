@@ -808,4 +808,191 @@ console.log(max2(100, 20));
 const ePaisagem = (largura, altura) => largura >= altura;
 
 console.log(ePaisagem(1920.1920));
+
+// exercicio de logica de programação 03
+
+function fizzBuzz(numero){
+    if(typeof numero !== 'number') return 'fizzBuzz';
+    if(numero % 3 === 0 && numero % 5 === 0)return 'fizzBuzz';
+    if(numero % 3 === 0) return 'Fizz';
+    if(numero % 5 === 0) return 'Buzz';
+    return numero;
+}
+
+console.log('a', fizzBuzz('a'));
+for (let i = 0; i <= 100; i++){
+    console.log(i, fizzBuzz(i))
+}
+
+//tratando e lançando erros(try, catch, throw)
+
+try {
+    console.log(naoExisto);
+} catch (err){
+    console.log('naoExisto nao existe.');
+    console,log(err);
+}
+
+//lancando erros 
+
+function soma(x, y){
+    if(
+        typeof x !== 'number' || 
+        typeof y !== 'number'
+        ){
+        throw new Error('x e y precisam ser numeros.');
+    }
+    return x + y;
+}
+try{
+    console.log(soma(1, 2));
+    console.log(soma('1', 2));
+}catch(error){
+    console.log(error);
+};
+
+//tratando e lançando erros(try, catch, finally)
+
+try{
+    //executa quando nao há erros
+}catch (e){
+    //executa quando há erros
+}finally{
+    //executa sempre
+};
+
+//tratando e lançando erros(try, catch, finally)
+ function retornaHora(data){
+    if (data && !(data instanceof Date)){
+        throw new TypeError('Esperando intancia de data.');
+    }
+    if (!data){
+        data = new Date();
+    }
+    return data.toLocaleTimeString('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+    });
+ }
+
+ try {
+    const data = new Date('01-01-1970 12:58:12');
+    const hora = retornaHora();
+    console.log(hora);
+ }catch(e){
+    //tratar erro
+    //console.log(e);
+ }finally{
+    console.log('tenha um bom dia. ');
+ }
+
+ //setInterval e setTimeout
+
+function mostraHora(){
+    let data = new Date();
+
+    return data.toLocaleTimeString('pt-BR', {
+        hour12: false
+    });
+}
+
+const timer = setInterval(function(){
+    console.log(mostraHora());
+}, 1000);
+
+setTimeout(function(){
+    clearInterval(timer);
+}, 10000);
+
+setTimeout(function(){
+    console.log('Ola mundo!');
+}, 10000);
+// exercicios de cronometro
+function criaHoraDosSegundos(segundos){
+    const data = new Date(segundos * 1000);
+    return data.toLocaleTimeString('pt-BR', {
+        hour12: false,
+        timeZone: 'UTC'
+    })
+}
+console.log(criaHoraDosSegundos(10));
+
+const relogio = document.querySelector('.relogio');
+const iniciar = document.querySelector('.iniciar');
+const pausar = document.querySelector('.pausar');
+const zerar= document.querySelector('.zerar');
+let segundos = 0;
+let timer;
+
+function iniciaRelogio(){
+    timer = setInterval(function(){
+        segundos++;
+        relogio.innerHTML = criaHoraDosSegundos(segundos);
+    }, 1000);
+}
+
+iniciar.addEventListener('click', function(event){
+    relogio.classList.remove('pausado');
+    clearInterval(timer);
+    iniciaRelogio();
+});
+
+pausar.addEventListener('click', function(event){
+    relogio.classList.add('pausado');
+    clearInterval(timer);
+});
+zerar.addEventListener('click', function(event){
+    clearInterval(timer);
+    relogio.innerHTML ='00:00:00';
+    segundos = 0;
+});
+
+// exercicios de cronometro modo mais curto
+function criaHoraDosSegundos(segundos){
+    const data = new Date(segundos * 1000);
+    return data.toLocaleTimeString('pt-BR', {
+        hour12: false,
+        timeZone: 'UTC'
+    })
+}
+console.log(criaHoraDosSegundos(10));
+
+const relogio = document.querySelector('.relogio');
+const iniciar = document.querySelector('.iniciar');
+const pausar = document.querySelector('.pausar');
+const zerar= document.querySelector('.zerar');
+let segundos = 0;
+let timer;
+
+function iniciaRelogio(){
+    timer = setInterval(function(){
+        segundos++;
+        relogio.innerHTML = criaHoraDosSegundos(segundos);
+    }, 1000);
+}
+
+document.addEventListener('click', function(e){
+    const el = e.target;
+
+    if(el.classList.contains('zerar')){
+        relogio.classList.remove('pausado');
+        clearInterval(timer);
+        relogio.innerHTML ='00:00:00';
+        segundos = 0;
+    }
+    if(el.classList.contains('iniciar')){
+        relogio.classList.remove('pausado');
+        clearInterval(timer);
+        iniciaRelogio();
+    }
+    if(el.classList.contains('pausar')){
+        relogio.classList.add('pausado');
+        clearInterval(timer);
+    }
+})
+
+
+
 */

@@ -2,8 +2,7 @@
     background: #153352;
 }
 
-
-
+.relogio,
 p,
 h1
 {
@@ -12,7 +11,10 @@ h1
     margin: auto;
     margin-bottom: 50px;
 }
-
+.pausado
+{
+    color: red;
+}
 form{ 
     margin: auto;
     max-width: 600px;
