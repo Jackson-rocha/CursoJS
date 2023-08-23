@@ -769,4 +769,43 @@ do {
     console.log(rand);
 } while(rand !== 10);
 
+//break e continue
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (let numero of numeros){
+
+    if(numero === 2){
+    continue;//pula o intem selecionado
+    }
+
+    if (numero === 7){
+        break;//para no item selecionado
+    }
+
+    console.log(numero);
+}
+
+// exercicios com logica de programação
+
+function max(x, y){
+    if(x > y) return x;
+    return y;
+    
+}
+//
+function max(x, y){
+    return x > y ? x : y;
+}
+
+const max2 = (x, y) => x > y ? x : y;
+
+
+console.log(max2(100, 20));
+
+// exercicio 2 com logica de programação !!!
+
+const ePaisagem = (largura, altura) => largura >= altura;
+
+console.log(ePaisagem(1920.1920));
 */
