@@ -1070,4 +1070,44 @@ function adicionaTarefasSalvas(){
 }
 adicionaTarefasSalvas();
 
+//declaração de função ( function hoisting); são lidas prieiro
+function falaOi(){
+    console.log('oi');
+}
+falaOi();
+
+//First-class objects (objetos de primeira class)
+//function expression
+const souUmDado = function(){
+    console.log('sou um dado.');
+};
+souUmDado();
+
+//arrow function
+const funçãoArrow = () => {
+    console.log('sou arrow function.')
+}
+funçãoArrow();
+
+const obj = {
+    falar: function(){
+        console.log('Estou falando...');
+    }
+};
+obj.falar(); 
+
+//Parametros
+
+function conta(operador, acumulador, ...numeros){
+    for(let numero of numeros){
+        if(operador === '+') acumulador += numero;
+        if(operador === '-') acumulador -= numero;
+        if(operador === '*') acumulador *= numero;
+        if(operador === '/') acumulador /= numero;
+    }
+    console.log(acumulador);    
+}
+conta('*', 3, 3, 5);
+
+
 */
