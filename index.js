@@ -1124,4 +1124,42 @@ const quadriplica = criaMultiplicador(4);
 console.log(duplica(2));
 console.log(triplica(2));
 console.log(quadriplica(2));
+
+// factory function (função fabrica)
+//constructor function(função construtora)
+function criarPessoa(nome, sobrenome, altura, peso){
+    return{
+        nome,
+        sobrenome,
+        //GETTER
+        get nomeCompleto(){
+            return `${this.nome} ${this.sobrenome}`;
+        },
+        //setter
+        set nomeCompleto(valor){
+            valor = valor.split(' ');
+            this.nome = valor.shift();
+            this.sobrenome = valor.join(' ');
+        },
+        fala(assunto = 'falando sobre NADA'){
+            return `${this.nome} está ${assunto}.`;
+        },
+        altura: altura,
+        peso: peso,
+        //GETTER
+        get imc(){
+            const indice = this.peso / (this.altura ** 2);
+            return indice.toFixed(2);
+        }
+    };
+}
+
+const p1 = criarPessoa('luiz' , 'otavio', 1.80, 80);
+const p2 = criarPessoa('joao' , 'otavio', 1.90, 57);
+const p3 = criarPessoa('junior' , 'otavio', 1.50, 110);
+
+console.log(p1.imc);
+console.log(p2.imc);
+console.log(p3.imc);
+
 */
