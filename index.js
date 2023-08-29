@@ -446,15 +446,15 @@ const nivelUsuario = pontuacaoUsuario >= 1000 ? 'Usuario VIP' : 'Usuario normal'
 console.log(nivelUsuario);
 
 
-/*if(pontuacaoUsuario >= 1000)
+if(pontuacaoUsuario >= 1000)
 {
     console.log('Usuario vip');
 } else{
     console.log('Usuario noraml')
-}; */
+}; 
 // objeto date  
 
-/* const data = new Date('2019-04 20:20:59');
+const data = new Date('2019-04 20:20:59');
 console.log('dia', data.getDate());
 console.log('mes', data.getMonth() + 1);//mes começa do zero 
 console.log('ano', data.getFullYear());
