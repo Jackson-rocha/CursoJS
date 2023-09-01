@@ -1163,3 +1163,70 @@ console.log(p2.imc);
 console.log(p3.imc);
 
 */
+//numeros pares
+// dobrar os valores
+//reduzir (somar tudo)
+
+const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7,11, 15,22, 27];
+const numeroPares = numeros
+.filter(valor => valor % 2 === 0)
+.map(valor => valor * 2)
+.reduce((ac, valor) => ac + valor)
+
+console.log(numeroPares);
+
+// defineProperty - defineProperties
+function Produto(nome, preco, estoque){
+    this.nome = nome;
+    this.preco = preco;
+
+    Object.defineProperty(this, 'estoque', {
+        enumerable: true, //mostra a chave
+        value: estoque, //valor
+        writable: false, //pode alterar
+        configurable: true //configuravel
+    });
+
+    
+}
+const p1 = new Produto('camiseta', 20, 3);
+p1.estoque = 500000;
+console.log(p1);
+
+//obct.assign(des, any)
+//object.getOwPropertyDescriptor(o, 'prop')
+// ...(spread)
+
+//object.keys (retorna as chaves)
+//object.freezer (congela o objeto)
+//object.defineProperties(define varias propriedades)
+//object.defineProperty (define uma propriedade)
+
+function myFunction(parameter) {
+
+    const a = parameter.map(p => {
+  
+       return p.value
+  
+    })
+  
+  const b = a.reduce((c, d) => {
+  
+        return c *= d * 3
+  
+    }, 1)
+  
+  return b
+  
+  }
+  
+  console.log(myFunction([
+    {
+        name: 'a', 
+        value: 3 
+    }, 
+    { 
+        name : 'b', 
+        value: 18 
+    }
+]))
