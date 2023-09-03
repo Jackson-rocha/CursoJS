@@ -1230,3 +1230,63 @@ function myFunction(parameter) {
         value: 18 
     }
 ]))
+
+//super class
+function Conta(agecia, conta, saldo){
+    this.agecia = agecia;
+    this.conta =conta;
+    this.saldo = saldo;
+
+}
+
+Conta.prototype.sacar = function(valor){
+    if(valor > this.saldo){
+        console.log(`saldo insuficiente: ${this.saldo}`);
+        return;
+    }
+    this.saldo -= valor;
+    this,this.verSaldo();
+};
+Conta.prototype.depositar = function(valor){
+    this.saldo += valor;
+    this.verSaldo();
+};
+Conta.prototype.verSaldo = function(){
+    console.log(`ag/c: ${this.agecia}/${this.conta}  saldo: R$${this.saldo.toFixed(2)}`
+    );
+};
+
+function CC(agecia, conta, saldo, limite){
+    Conta.call(this, agecia, conta, saldo);
+    this.limite = limite;
+}
+CC.prototype = Object.create(Conta.prototype);
+CC.prototype.constructor = CC;
+
+CC.prototype.sacar = function(valor){
+    if(valor > (this.saldo + this.limite)){
+        console.log(`saldo insuficiente: ${this.saldo}`);
+        return;
+    }
+    this.saldo -= valor;
+    this,this.verSaldo();
+};
+
+function CP(agecia, conta, saldo, limite){
+    Conta.call(this, agecia, conta, saldo);
+    this.limite = limite;
+}
+CP.prototype = Object.create(Conta.prototype);
+CP.prototype.constructor = CP;
+
+
+
+const cc = new CC(11, 22, 0, 100); 
+cc.depositar(10);
+cc.sacar(110);
+cc.sacar(1);
+
+const cp = new CP(12, 33, 0);
+cp.depositar(10);
+cp.sacar(110);
+cp.sacar(1);
